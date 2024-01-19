@@ -42,7 +42,6 @@ namespace AuctionService.Data.Migrations
                     Color = table.Column<string>(type: "text", nullable: true),
                     Mileage = table.Column<int>(type: "integer", nullable: false),
                     ImageUrl = table.Column<string>(type: "text", nullable: true),
-                    MyProperty = table.Column<int>(type: "integer", nullable: false),
                     AuctionId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>

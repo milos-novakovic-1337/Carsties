@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AuctionService.Data.Migrations
 {
     [DbContext(typeof(AuctionDbContext))]
-    [Migration("20240111142729_InitialCreate")]
+    [Migration("20240118125841_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -86,9 +86,6 @@ namespace AuctionService.Data.Migrations
 
                     b.Property<string>("Model")
                         .HasColumnType("text");
-
-                    b.Property<int>("MyProperty")
-                        .HasColumnType("integer");
 
                     b.Property<int>("Year")
                         .HasColumnType("integer");
