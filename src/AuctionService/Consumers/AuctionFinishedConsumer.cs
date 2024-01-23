@@ -1,5 +1,4 @@
 ﻿using AuctionService.Data;
-using AuctionService.Entities;
 using Contracts;
 using MassTransit;
 
@@ -26,7 +25,7 @@ public class AuctionFinishedConsumer : IConsumer<AuctionFinished>
             auction.SoldAmount = context.Message.Amount;
         }
 
-        auction.Status = auction.SoldAmount > auction.ReservePrice
+        auction.Status = auction.SoldAmount > auction.ReservedPrice
             ? Status.Finished : Status.ReserveNotMet;
 
         await _dbContext.SaveChangesAsync();
