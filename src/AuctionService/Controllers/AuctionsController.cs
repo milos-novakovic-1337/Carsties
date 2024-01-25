@@ -48,7 +48,7 @@ public class AuctionsController : ControllerBase
     public async Task<ActionResult<AuctionDto>> CreateAuction(CreateAuctionDto auctionDto)
     {
         var auction = _mapper.Map<Auction>(auctionDto);
-        // TODO: add current user as seller
+
         auction.Seller = User.Identity.Name;
 
         _context.Auctions.Add(auction);
@@ -59,7 +59,7 @@ public class AuctionsController : ControllerBase
 
         var result = await _context.SaveChangesAsync() > 0;
 
-        if (!result) return BadRequest("Could not save changes to the DB");
+        if (!result) return BadRequest("Could not save changes to the database");
 
         return CreatedAtAction(nameof(GetAuctionById),
             new { auction.Id }, newAuction);

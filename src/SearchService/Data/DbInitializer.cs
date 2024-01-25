@@ -1,5 +1,4 @@
-﻿using System.Text.Json;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using MongoDB.Entities;
 
 namespace SearchService;
