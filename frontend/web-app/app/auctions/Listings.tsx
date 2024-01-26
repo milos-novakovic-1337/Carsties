@@ -13,7 +13,7 @@ import EmptyFilter from "../components/EmptyFilter";
 
 export default function Listings() {
   const [data, setData] = useState<PagedResult<Auction>>();
-  const pageNumber = useParamsStore(
+  const params = useParamsStore(
     (state) => ({
       pageNumber: state.pageNumber,
       pageSize: state.pageSize,
